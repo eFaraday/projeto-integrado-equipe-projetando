@@ -1,0 +1,12 @@
+.footer-wave {
+  width: 100%;
+  height: 90px;
+  background: #082B5D;
+  border-radius: 70% 70% 0 0;
+}
+
+@media (max-width: 480px) {
+  .footer-wave {
+    height: 60px;
+  }
+}
