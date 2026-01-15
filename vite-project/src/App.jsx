@@ -2,10 +2,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Login from './pages/login/Login';
-import Voluntario from './pages/voluntario/Voluntario';
 import Home from './pages/home/Home';
 import Donate from './pages/donate/Donate';
-import Relatorio from './pages/relatorio/Relatorio';
 import './App.css';
 
 const PrivateRoute = ({ children }) => {
@@ -32,23 +30,7 @@ function App() {
           }
         />
 
-        <Route
-          path="/voluntario"
-          element={
-            <PrivateRoute>
-              <Voluntario />
-            </PrivateRoute>
-          }
-        />
 
-        <Route
-          path="/relatorio"
-          element={
-            <PrivateRoute>
-              <Relatorio />
-            </PrivateRoute>
-          }
-        />
 
         {/* Rotas Protegidas */}
         <Route

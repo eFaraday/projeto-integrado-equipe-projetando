@@ -1,80 +1,161 @@
-.menu-toggle {
-  display: none;
+/* Header container */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: flex-end;
+  /* Desktop: links on right */
+  align-items: center;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  /* Slight background to separate from content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  /* Subtle shadow */
 }
 
+/* Hamburger Menu (Hidden on Desktop) */
 .menu {
-  width: 40px;
-  height: 30px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  display: none;
+  width: 30px;
+  height: 24px;
   cursor: pointer;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 1001;
+  z-index: 1002;
 }
 
 .menu span {
-  height: 5px;
-  background-color: #1C4A77;
+  height: 3px;
+  width: 100%;
+  background-color: #082B5D;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
 
+/* Side Menu / Nav Links */
 .side-menu {
-  position: fixed;
-  top: 0;
-  left: -260px;
-  width: 260px;
-  height: 100%;
-  background-color: #082B5D;
-  padding-top: 80px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  transition: 0.3s;
-  z-index: 1000;
 }
 
 .side-menu ul {
   list-style: none;
-  padding-left: 20px;
-  width: 100%;
-}
-
-.side-menu ul li {
-  margin: 20px 0;
   display: flex;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
 }
 
 .side-menu ul li a {
-  color: white;
-  font-size: 30px;
+  color: #082B5D;
+  font-size: 1.1rem;
+  font-weight: 600;
   text-decoration: none;
   font-family: "Segoe UI", sans-serif;
+  transition: color 0.2s;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .side-menu ul li a:hover {
-  text-decoration: underline;
+  background-color: #eff3f6;
+  color: #082B5D;
 }
 
-.side-menu.open {
-  left: 0;
-}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+    justify-content: flex-start;
+    /* Mobile: Toggle on left */
+  }
 
-.menu.open span {
-  background-color: white;
-}
+  /* Show Hamburger */
+  .menu {
+    display: flex;
+    position: relative;
+    /* Keep it in flow or modify below */
+  }
 
-.menu.open span:nth-child(1) {
-  transform: rotate(45deg) translate(8px, 6px);
-}
+  /* Transform .side-menu into a mobile drawer */
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    /* Hidden by default */
+    width: 250px;
+    /* Drawer width */
+    height: 100vh;
+    background-color: #082B5D;
+    flex-direction: column;
+    padding-top: 80px;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+    align-items: flex-start;
+    /* Align link text left */
+  }
 
-.menu.open span:nth-child(2) {
-  opacity: 0;
-}
+  .side-menu.open {
+    left: 0;
+    /* Slide in */
+  }
 
-.menu.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(8px, -6px);
+  .side-menu ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .side-menu ul li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .side-menu ul li a {
+    display: block;
+    width: 100%;
+    padding: 20px 30px;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 0;
+  }
+
+  .side-menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+
+  /* Hamburger Animation States */
+  .menu.open span {
+    background-color: #082B5D;
+    /* Keep blue if outside drawer, or white if inside? */
+    /* If the drawer doesn't cover the toggle, blue is fine. 
+        If drawer covers it, toggle needs higher Z and white color.
+        Here drawer is 250px wide from left. Toggle is usually at left: 20px. 
+        So drawer covers toggle. Toggle must be Z-Index 1002 (it is).
+        And color must switch to white to be seen on blue drawer. */
+    background-color: white;
+  }
+
+  .menu {
+    /* Ensure menu button stays fixed so it doesn't scroll away if we Open/Close from top */
+    /* Actually 'header' is fixed, so 'relative' inside header works fine. */
+    /* But if drawer is OPEN, we want toggle to be visible ON TOP of drawer. */
+    z-index: 1002;
+  }
+
+  .menu.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
 }

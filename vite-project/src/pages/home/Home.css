@@ -1,21 +1,128 @@
 .home-container {
-  text-align: center;
-  width: 100vw;
-  height: 100vh;
-  font-family: "Segoe UI", sans-serif;
-  color: #333;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 100px 20px 40px;
+  /* Top padding clears fixed header */
+  background-color: #f9f9f9;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .home-title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #082B5D;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-weight: 700;
 }
 
-.home-text {
-  font-size: 1.2rem;
+.home-mission {
+  font-size: 1.1rem;
   color: #555;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #007bff;
+  /* Or a color that matches the brand */
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.collective-text {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 40px;
+  font-style: italic;
+  max-width: 500px;
+}
+
+.btn-subscribe {
+  background-color: #25d366;
+  /* WhatsApp Green or Brand Color */
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-subscribe:hover {
+  background-color: #1ebc57;
+  transform: translateY(-2px);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 1.8rem;
+  }
+
+  .home-mission {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .stats-container {
+    gap: 30px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding-top: 90px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .home-title {
+    font-size: 1.5rem;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .btn-subscribe {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 20px;
+  }
 }
