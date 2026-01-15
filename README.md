@@ -1,6 +1,6 @@
 # ⚡ Projeto Faraday
 
-Plataforma web para gestão de voluntários e doações do Instituto VORP, com sistema de autenticação e banco de dados na nuvem.
+Plataforma web para doações e divulgação simplificada do Instituto VORP.
 
 ---
 
