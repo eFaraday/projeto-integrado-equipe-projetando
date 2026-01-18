@@ -1,13 +1,25 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    navigate('/login');
+    setIsOpen(false);
+  };
+
+  const isLoggedIn = !!localStorage.getItem('token');
 
   return (
     <header>
@@ -22,7 +34,11 @@ const Navbar = () => {
 
       <div className={`side-menu ${isOpen ? 'open' : ''}`}>
         <ul>
-          <li><Link to="/login" onClick={toggleMenu}>Entrar</Link></li>
+          {isLoggedIn ? (
+            <li><Link to="#" onClick={handleLogout}>Sair</Link></li>
+          ) : (
+            <li><Link to="/login" onClick={toggleMenu}>Entrar</Link></li>
+          )}
           <li><Link to="/donate" onClick={toggleMenu}>Doações</Link></li>
           <li><Link to="/" onClick={toggleMenu}>Quem Somos?</Link></li>
         </ul>
