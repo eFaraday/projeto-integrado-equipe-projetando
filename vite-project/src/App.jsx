@@ -4,6 +4,7 @@ import Footer from './components/footer/Footer';
 import Login from './pages/login/Login';
 import Home from './pages/home/Home';
 import Donate from './pages/donate/Donate';
+import ImportCsv from './pages/import-csv/ImportCsv';
 import './App.css';
 
 const PrivateRoute = ({ children }) => {
@@ -46,6 +47,14 @@ function App() {
           element={
             <PrivateRoute>
               <Home />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/import-csv"
+          element={
+            <PrivateRoute>
+              <ImportCsv />
             </PrivateRoute>
           }
         />

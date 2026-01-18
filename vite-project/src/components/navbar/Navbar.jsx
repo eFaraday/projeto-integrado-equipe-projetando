@@ -39,6 +39,7 @@ const Navbar = () => {
           ) : (
             <li><Link to="/login" onClick={toggleMenu}>Entrar</Link></li>
           )}
+          <li><Link to="/import-csv" onClick={toggleMenu}>Doadores</Link></li>
           <li><Link to="/donate" onClick={toggleMenu}>Doações</Link></li>
           <li><Link to="/" onClick={toggleMenu}>Quem Somos?</Link></li>
         </ul>
