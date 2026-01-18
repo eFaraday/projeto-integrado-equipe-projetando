@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Login from './pages/login/Login';
+import Signup from './pages/signup/Signup';
 import Home from './pages/home/Home';
 import Donate from './pages/donate/Donate';
 import ImportCsv from './pages/import-csv/ImportCsv';
@@ -27,6 +28,15 @@ function App() {
           element={
             <PublicRoute>
               <Login />
+            </PublicRoute>
+          }
+        />
+
+        <Route
+          path="/signup"
+          element={
+            <PublicRoute>
+              <Signup />
             </PublicRoute>
           }
         />

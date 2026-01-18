@@ -54,6 +54,23 @@ const Login = () => {
           Quero ser voluntário
         </button>
       </div>
+
+      <div style={{ marginTop: '20px', textAlign: 'center' }}>
+        <p style={{ color: '#666', fontSize: '16px' }}>
+          Não tem uma conta?{' '}
+          <span
+            onClick={() => navigate('/signup')}
+            style={{
+              color: '#082B5D',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              textDecoration: 'underline'
+            }}
+          >
+            Cadastre-se
+          </span>
+        </p>
+      </div>
     </div>
   );
 };

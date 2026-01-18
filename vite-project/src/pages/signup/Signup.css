@@ -1,0 +1,131 @@
+.signup-container {
+    background: #ffffff;
+    width: 100vw;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    font-family: "Segoe UI", sans-serif;
+    padding-bottom: 40px;
+}
+
+.signup-logo {
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+.signup-title {
+    color: #082B5D;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.signup-input {
+    width: 80%;
+    max-width: 350px;
+    padding: 15px;
+    background: #e3e3e3;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+.signup-input:focus {
+    outline: none;
+    background: #d8d8d8;
+    box-shadow: 0 0 0 2px #082B5D;
+}
+
+.signup-btn {
+    width: 60%;
+    max-width: 300px;
+    padding: 15px;
+    background: #082B5D;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+    background: #0a3a7a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(8, 43, 93, 0.3);
+}
+
+.signup-btn:active {
+    transform: translateY(0);
+}
+
+.message {
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 350px;
+    font-size: 15px;
+}
+
+.error-message {
+    background: #ffe6e6;
+    color: #d32f2f;
+    border: 1px solid #ffcccc;
+}
+
+.success-message {
+    background: #e6f7e6;
+    color: #2e7d32;
+    border: 1px solid #b3e6b3;
+}
+
+.login-link {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.login-link p {
+    color: #666;
+    font-size: 16px;
+}
+
+.link-text {
+    color: #082B5D;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.link-text:hover {
+    color: #F79C33;
+}
+
+@media (max-width: 480px) {
+    .signup-logo {
+        width: 150px;
+    }
+
+    .signup-title {
+        font-size: 24px;
+    }
+
+    .signup-btn {
+        width: 70%;
+    }
+
+    .signup-input {
+        width: 85%;
+    }
+}
